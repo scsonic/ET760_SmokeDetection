@@ -5,8 +5,9 @@ Smoke Detection Model
 Use the deep learning YOLO framework to complete the smoke detection model.
 
 ## Setup
-Command: `git clone https://github.com/pjreddie/darknet`
-create smoke.cfg, smoke.data, smoke.names into darknet folder
+Clone the darknet framework: `git clone https://github.com/pjreddie/darknet`
+
+Then create smoke.cfg, smoke.data, and smoke.names into the local folder
 
 
 ## Data set
@@ -14,10 +15,10 @@ We label 373 images in VOC format. Then, we randomly select 90% as training set 
 ![](https://i.imgur.com/ulIzdsi.png)
 
 ## Training
-Command: `./darknet detector train cfg/smoke.data cfg/smoke.cfg darknet53.conv.74`
+Train the model using the command: `./darknet detector train cfg/smoke.data cfg/smoke.cfg darknet53.conv.74`
 
 ## Result
-Use Opencv to load the model weight
+Run the model with OpenCV 
 ```
 self.net = cv2.dnn.readNetFromDarknet(modelConfiguration, modelWeights)
 self.net.setPreferableBackend(cv2.dnn.DNN_BACKEND_OPENCV)
